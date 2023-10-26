@@ -6,22 +6,21 @@
 /*   By: JFikents <JFikents@student.42Heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 23:12:34 by JFikents          #+#    #+#             */
-/*   Updated: 2023/10/25 15:53:25 by JFikents         ###   ########.fr       */
+/*   Updated: 2023/10/26 22:34:38 by JFikents         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft/libft.h"
 
 int	ft_printf_formato(const char *formato)
 {
-	int		s_to_print;
+	int	i;
 
-	s_to_print = 0;
-	while (formato[s_to_print] && formato[s_to_print] != '%')
+	i = 0;
+	while (formato[i] && formato[i] != '%')
 	{
-		s_to_print++;
-		ft_putchar_fd(formato[s_to_print], 1);
+		ft_putchar(formato[i]);
+		i++;
 	}
-	return (s_to_print);
+	return (i);
 }
