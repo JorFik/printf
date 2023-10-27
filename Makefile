@@ -6,7 +6,7 @@
 #    By: JFikents <JFikents@student.42Heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/18 21:57:25 by JFikents          #+#    #+#              #
-#    Updated: 2023/10/27 19:53:05 by JFikents         ###   ########.fr        #
+#    Updated: 2023/10/27 20:09:12 by JFikents         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ OBJ+ = $(C_FILES:.c=.o) $(BONUS_FILES:.c=.o)
 NAME = libftprintf.a
 H_FILE = ft_printf.h libft/libft.h
 A_FILE = libft/libft.a
-C_FILES = ft_printf.c ft_printf_formato.c ft_cases.c ft_hex_cases.c
+C_FILES = ft_printf.c ft_cases.c ft_hex_cases.c
 
 BONUS_FILES =
 

@@ -6,7 +6,7 @@
 /*   By: JFikents <JFikents@student.42Heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 21:57:54 by JFikents          #+#    #+#             */
-/*   Updated: 2023/10/27 18:15:12 by JFikents         ###   ########.fr       */
+/*   Updated: 2023/10/27 20:07:09 by JFikents         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 int	ft_putchar(char c);
 int	ft_putstr(char *s);
 int	ft_printf(const char *formato, ...);
-int	ft_printf_formato(const char *formato);
 int	ft_cases(const char *formato, va_list input);
 int	ft_hex_cases(const char *formato, va_list input);
 #endif
 
+// int	ft_printf_formato(const char *formato);
 // ? Program name libftprintf.a
 // _ Turn in files Makefile, *.h, */*.h, *.c, */*.c
 // ~ Makefile NAME, all, clean, fclean, re
