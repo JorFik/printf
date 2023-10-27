@@ -6,13 +6,13 @@
 /*   By: JFikents <JFikents@student.42Heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 21:57:54 by JFikents          #+#    #+#             */
-/*   Updated: 2023/10/26 22:15:47 by JFikents         ###   ########.fr       */
+/*   Updated: 2023/10/27 18:15:12 by JFikents         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-# include "libft/libft.h"
+//# include "libft/libft.h"
 # include <stdarg.h>
 # include <unistd.h>
 
