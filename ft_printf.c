@@ -6,7 +6,7 @@
 /*   By: JFikents <JFikents@student.42Heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 22:29:51 by JFikents          #+#    #+#             */
-/*   Updated: 2023/10/27 20:06:24 by JFikents         ###   ########.fr       */
+/*   Updated: 2023/10/29 00:54:11 by JFikents         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,30 @@ static int	ft_printf_formato(const char *formato)
 		i++;
 	}
 	return (i);
+}
+
+int	ft_is_bonus_flag(const char *formato)
+{
+	if (*formato == '#' || *formato == ' ' || *formato == '+'
+		|| ft_isdigit(*formato) || *formato == '.' || *formato == '-')
+		return (1);
+	return (0);
+}
+
+static int	ft_jump_specifiers(const char *formato)
+{
+	int	i;
+
+	i = 0;
+	while (ft_is_bonus_flag(&formato[i]))
+		i++;
+	if (formato[i] == 'c' || formato[i] == 's' || formato[i] == 'd'
+		|| formato[i] == 'i' || formato[i] == 'u' || formato[i] == '%'
+		|| formato[i] == 'p' || formato[i] == 'X' || formato[i] == 'x')
+		i ++;
+	else
+		return (2);
+	return (i + 1);
 }
 
 int	ft_printf(const char *formato, ...)
@@ -46,7 +70,7 @@ int	ft_printf(const char *formato, ...)
 		else if (formato[i] == '%')
 		{
 			tmp = ft_cases(&formato[i], input);
-			i += 2;
+			i += ft_jump_specifiers(&formato[i] + 1);
 		}
 		bytes_printed += tmp;
 		if (tmp == -1)
@@ -61,9 +85,9 @@ int	ft_printf(const char *formato, ...)
 // 	int	a;
 // 	int	c;
 
-// 	a = ft_printf ("ft_printf = %p", 0);
+// 	a = ft_printf ("ft_printf = %c %c %c", '0', '0', '1');
 // 	ft_printf("\n");
-// 	c = printf ("   printf = %p", (void *)0);
+// 	c = printf ("   printf = %c %c %c", '0', '0', '1');
 // 	printf ("\nft_printf = %d\n   printf = %d\n     Diff = %d\n", a, c, a - c);
 // 	return (0);
 // }
