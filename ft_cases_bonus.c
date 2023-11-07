@@ -6,23 +6,39 @@
 /*   By: JFikents <JFikents@student.42Heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 20:33:48 by JFikents          #+#    #+#             */
-/*   Updated: 2023/10/29 01:06:01 by JFikents         ###   ########.fr       */
+/*   Updated: 2023/11/02 17:30:01 by JFikents         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+// ? FT_2ND_FLAGS is all wrong has a little bit of the structure to follow but
+// ? the logic is not fully there
+
 int	ft_2nd_flags(const char *formato, va_list input)
 {
-	va_list	c_input;
+	unsigned long	min_width;
+	va_list			c_input;
+	char			*num;
 
 	va_copy(c_input, input);
-	if (*formato == '0' && ft_isdigit(formato[1]))
-		;
-	if (*formato == '-' && ft_isdigit(formato[1]))
-		;
-	if (*formato == '.' && ft_isdigit(formato[1]))
-		;
+	if (ft_isdigit(formato[1]))
+	{
+		min_width = ft_atoi(&formato[1]);
+		num = ft_itoa(va_arg(c_input, int));
+		if (!num)
+			return (-1);
+		while (ft_strlen(num) < min_width)
+		{
+			if (*formato == '-' && ft_isdigit(formato[1]))
+				;
+			if (*formato == '0' && ft_isdigit(formato[1]))
+				;
+			if (*formato == '.' && ft_isdigit(formato[1]))
+				;
+		}
+		free (num);
+	}
 	va_end(c_input);
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: JFikents <JFikents@student.42Heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/18 21:57:25 by JFikents          #+#    #+#              #
-#    Updated: 2023/10/29 01:08:29 by JFikents         ###   ########.fr        #
+#    Updated: 2023/11/02 18:31:43 by JFikents         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,7 @@ re: fclean all
 	@mv a.out $(DEBUGGER)
 	@mv *.gch $(DEBUGGER)
 	@make fclean
+	@$(RM) $(LIBFT_D)*.gch
 
 c: fclean
 	@$(RM) $(DEBUGGER)* 

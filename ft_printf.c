@@ -6,7 +6,7 @@
 /*   By: JFikents <JFikents@student.42Heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 22:29:51 by JFikents          #+#    #+#             */
-/*   Updated: 2023/10/29 00:54:11 by JFikents         ###   ########.fr       */
+/*   Updated: 2023/11/07 17:03:33 by JFikents         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,9 @@ int	ft_printf(const char *formato, ...)
 // 	int	a;
 // 	int	c;
 
-// 	a = ft_printf ("ft_printf = %c %c %c", '0', '0', '1');
+// 	a = ft_printf ("ft_printf = %d %i %u", -120932, -120932, -120932);
 // 	ft_printf("\n");
-// 	c = printf ("   printf = %c %c %c", '0', '0', '1');
+// 	c = printf ("   printf = %d %i %u", '0', '0', '1');
 // 	printf ("\nft_printf = %d\n   printf = %d\n     Diff = %d\n", a, c, a - c);
 // 	return (0);
 // }

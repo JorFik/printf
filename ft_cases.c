@@ -6,7 +6,7 @@
 /*   By: JFikents <JFikents@student.42Heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:35:54 by JFikents          #+#    #+#             */
-/*   Updated: 2023/10/29 00:27:48 by JFikents         ###   ########.fr       */
+/*   Updated: 2023/11/07 17:04:57 by JFikents         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ int	ft_cases(const char *formato, va_list input)
 	while (ft_is_bonus_flag(&formato[i]))
 	{
 		flag_prints = ft_bonus_flags(&formato[i], input);
+		if (!flag_prints)
+			return (-1);
 		i ++;
 	}
 	if (formato[i] == 'c')
