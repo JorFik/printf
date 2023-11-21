@@ -6,7 +6,7 @@
 #    By: JFikents <JFikents@student.42Heilbronn.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/18 21:57:25 by JFikents          #+#    #+#              #
-#    Updated: 2023/11/02 18:31:43 by JFikents         ###   ########.fr        #
+#    Updated: 2023/11/20 22:36:23 by JFikents         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ LIB = ar rcs
 RM = rm -rf
 CC = cc
 CALLMAKE = make -C $(LIBFT_D)
-CCFLAGS = -Wall -Wextra -Werror -Ilibft
+CFLAGS = -Wall -Wextra -Werror -Ilibft
 ADD = -fsanitize=address -g
 OBJ+ = $(C_FILES:.c=.o) $(BONUS_FILES:.c=.o)
 LIBFT_D = libft/
@@ -40,7 +40,7 @@ $(A_FILE) :
 	@$(CALLMAKE)
 
 %.o : %.c 
-	@$(CC) $(CCFLAGS) -c -o $@ $<
+	@$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
 	@$(RM) $(OBJ+)
